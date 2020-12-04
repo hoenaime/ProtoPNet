@@ -13,8 +13,10 @@ Prerequisites: PyTorch, NumPy, cv2, Augmentor (https://github.com/mdbloice/Augme
 Recommended hardware: 4 NVIDIA Tesla P-100 GPUs or 8 NVIDIA Tesla K-80 GPUs
 
 Preliminaries (Do this in order to do the data preparation automatically):
-1. Run crop.py
-2. Run train_test_split.py
+1. Create a `datasets` in root and extract the dataset (the folder `CUB_200_2011` is in the folder `datasets`)
+2. Run crop.py (Change `dataset_path` if necessary)
+3. Run train_test_split.py
+4. Go to directly to "Instructions for training the model:"
 
 Instructions for preparing the data:
 1. Download the dataset CUB_200_2011.tgz from http://www.vision.caltech.edu/visipedia/CUB-200-2011.html
