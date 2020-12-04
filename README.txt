@@ -12,6 +12,10 @@ and the distribution of this code package).
 Prerequisites: PyTorch, NumPy, cv2, Augmentor (https://github.com/mdbloice/Augmentor)
 Recommended hardware: 4 NVIDIA Tesla P-100 GPUs or 8 NVIDIA Tesla K-80 GPUs
 
+Preliminaries (Do this in order to do the data preparation automatically):
+1. Run crop.py
+2. Run train_test_split.py
+
 Instructions for preparing the data:
 1. Download the dataset CUB_200_2011.tgz from http://www.vision.caltech.edu/visipedia/CUB-200-2011.html
 2. Unpack CUB_200_2011.tgz

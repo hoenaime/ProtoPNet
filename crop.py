@@ -25,8 +25,7 @@ if __name__ == '__main__':
             img = cv2.imread(img_path.as_posix().strip())
             img_cropped = img[bb[1]:bb[1]+bb[3], bb[0]:bb[0]+bb[2]]
             output_path = output_folder/img_location
-            if not output_path.parent.is_dir():
-                output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
             cv2.imwrite(output_path.as_posix().strip(), img_cropped)
 
 
