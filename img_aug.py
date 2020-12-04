@@ -1,5 +1,7 @@
 import Augmentor
 import os
+
+
 def makedir(path):
     '''
     if path does not exist in the file system, create it
@@ -7,9 +9,10 @@ def makedir(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
+
 datasets_root_dir = './datasets/cub200_cropped/'
 dir = datasets_root_dir + 'train_cropped/'
-target_dir = datasets_root_dir + 'train_cropped_augmented/'
+target_dir = '../../train_cropped_augmented/'  # The output directory works from the source directory
 
 makedir(target_dir)
 folders = [os.path.join(dir, folder) for folder in next(os.walk(dir))[1]]
