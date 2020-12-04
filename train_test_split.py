@@ -25,7 +25,6 @@ if __name__ == '__main__':
             if is_training_img:
                 output_location = train_folder / img_location
             else:
-                pass
                 output_location = test_folder / img_location
             output_location.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(img_path.as_posix().strip(), output_location.as_posix().strip())
