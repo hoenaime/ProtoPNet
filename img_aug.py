@@ -14,7 +14,7 @@ datasets_root_dir = './datasets/cub200_cropped/'
 dir = datasets_root_dir + 'train_cropped/'
 target_dir = '../../train_cropped_augmented/'  # The output directory works from the source directory
 
-makedir(target_dir)
+makedir(dir + target_dir)
 folders = [os.path.join(dir, folder) for folder in next(os.walk(dir))[1]]
 target_folders = [os.path.join(target_dir, folder) for folder in next(os.walk(dir))[1]]
 
@@ -43,9 +43,9 @@ for i in range(len(folders)):
         p.process()
     del p
     # random_distortion
-    #p = Augmentor.Pipeline(source_directory=fd, output_directory=tfd)
-    #p.random_distortion(probability=1.0, grid_width=10, grid_height=10, magnitude=5)
-    #p.flip_left_right(probability=0.5)
-    #for i in range(10):
-    #    p.process()
-    #del p
+    p = Augmentor.Pipeline(source_directory=fd, output_directory=tfd)
+    p.random_distortion(probability=1.0, grid_width=10, grid_height=10, magnitude=5)
+    p.flip_left_right(probability=0.5)
+    for i in range(10):
+        p.process()
+    del p
