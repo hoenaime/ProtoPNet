@@ -4,3 +4,4 @@ Augmentor
 torch
 torchvision
 matplotlib
+tqdm

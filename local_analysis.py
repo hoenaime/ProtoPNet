@@ -63,7 +63,7 @@ save_analysis_path = os.path.join(test_image_dir, model_base_architecture,
 makedir(save_analysis_path)
 
 log, logclose = create_logger(log_filename=os.path.join(save_analysis_path, 'local_analysis.log'))
-
+log('Results in ' + save_analysis_path)
 load_model_path = os.path.join(load_model_dir, load_model_name)
 epoch_number_str = re.search(r'\d+', load_model_name).group(0)
 start_epoch_number = int(epoch_number_str)
