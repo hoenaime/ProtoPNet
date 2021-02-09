@@ -10,7 +10,7 @@ def makedir(path):
         os.makedirs(path)
 
 
-datasets_root_dir = './datasets/cub200_cropped/'
+datasets_root_dir = './datasets/MIT/'  # './datasets/cub200_cropped/'
 dir = datasets_root_dir + 'train_cropped/'
 target_dir = '../../train_cropped_augmented/'  # The output directory works from the source directory
 
