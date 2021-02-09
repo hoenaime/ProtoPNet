@@ -43,7 +43,7 @@ def extract_mesures(logs, stop=None):
         for mesure in mesure_list:
             mesures[f"{dataset}_{mesure}"] = []
     for log in logs:
-        if log["name"] == "epoch":
+        if log["name"] == "epoch" or True:  # TODO: Remove after fix
             if stop is not None and stop <= log["num"]:
                 break
             for dataset_id, dataset in enumerate(("train", "test")):
@@ -55,7 +55,7 @@ def extract_mesures(logs, stop=None):
 if __name__ == '__main__':
     logfile_path = "output/train.log"
     logs = read_logs(logfile_path)
-    mesures = extract_mesures(logs, 25)
+    mesures = extract_mesures(logs, 19)
 
     plt.plot(mesures["train_cross ent"], label="train")
     plt.plot(mesures["test_cross ent"], label="test")
