@@ -21,6 +21,9 @@ target_folders = [os.path.join(target_dir, folder) for folder in next(os.walk(di
 for i in range(len(folders)):
     fd = folders[i]
     tfd = target_folders[i]
+    if os.path.isdir(tfd):
+        print("Déjà augmenté: " + tfd)
+        continue
     # rotation
     p = Augmentor.Pipeline(source_directory=fd, output_directory=tfd)
     p.rotate(probability=1, max_left_rotation=15, max_right_rotation=15)
