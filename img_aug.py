@@ -21,7 +21,7 @@ target_folders = [os.path.join(target_dir, folder) for folder in next(os.walk(di
 for i in range(len(folders)):
     fd = folders[i]
     tfd = target_folders[i]
-    if os.path.isdir(tfd):
+    if os.path.isdir(os.path.join(datasets_root_dir, os.path.basename(tfd))):
         print("Déjà augmenté: " + tfd)
         continue
     # rotation
