@@ -21,6 +21,8 @@ target_folders = [os.path.join(target_dir, folder) for folder in next(os.walk(di
 for i in range(len(folders)):
     fd = folders[i]
     tfd = target_folders[i]
+    print(os.path.join(datasets_root_dir, os.path.basename(tfd)))
+    print(os.getcwd())
     if os.path.isdir(os.path.join(datasets_root_dir, os.path.basename(tfd))):
         print("Déjà augmenté: " + tfd)
         continue
