@@ -4,6 +4,7 @@ Ce fichier sert à séparer le jeu de donnée
 # Imports de python
 from pathlib import Path
 import shutil
+import os
 
 # Import de modules tiers
 from tqdm import tqdm
@@ -28,5 +29,12 @@ if __name__ == '__main__':
                     output_location = test_folder / img_location
                 output_location.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy(img_path.as_posix().strip(), output_location.as_posix().strip())
-
+                break
+    labels = []
+    for folder in (train_folder, test_folder):
+        (dirpath, dirnames, filenames) = next(os.walk(folder))
+        for dossier in dirnames:
+            if dossier not in labels:
+                labels.append(dossier)
+            os.rename(folder/dossier, folder/f"{labels.index(dossier):03d}.{dossier}")
 
