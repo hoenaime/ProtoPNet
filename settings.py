@@ -1,6 +1,6 @@
 base_architecture = 'vgg19'  # 'resnet34'
 img_size = 224
-prototype_shape = (2000, 128, 1, 1)  # (2000, 256, 1, 1)
+prototype_shape = (670, 128, 1, 1)  # (2000, 128, 1, 1)  # (2000, 256, 1, 1)
 num_classes = 67
 prototype_activation_function = 'log'
 add_on_layers_type = 'regular'
