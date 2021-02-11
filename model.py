@@ -150,13 +150,16 @@ class PPNet(nn.Module):
 
         return distances
 
-    def _l2_convolution(self, x):
+    def _l2_convolution(self, x):  # x est la sortie de la partie convolutionnelle du réseau,
+        # x est donc de taille 7x7xD avec D = 128 ou 256 en fonction du réseau de base
+        # Chaque prototype est de taille 1x1xD
         '''
         apply self.prototype_vectors as l2-convolution filters on input x
         '''
         x2 = x ** 2
-        x2_patch_sum = F.conv2d(input=x2, weight=self.ones)
+        x2_patch_sum = F.conv2d(input=x2, weight=self.ones)  # Self.ones = Tenseur rempli de 1 de la bonne dimension
 
+        # self.prototype_vectors: Tenseur contenant les prototypes, dim = num_prototypes*1*1*D
         p2 = self.prototype_vectors ** 2
         p2 = torch.sum(p2, dim=(1, 2, 3))
         # p2 is a vector of shape (num_prototypes,)

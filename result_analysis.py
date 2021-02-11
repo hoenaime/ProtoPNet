@@ -36,14 +36,14 @@ def read_logs(log_path) -> [str]:
     return logs
 
 
-def extract_mesures(logs, stop=None):
+def extract_mesures(logs, stop=None, only_epoch=False):
     mesure_list = ("cross ent", "accu", "cluster", "separation")
     mesures = {}
     for dataset in ("train", "test"):
         for mesure in mesure_list:
             mesures[f"{dataset}_{mesure}"] = []
-    for log in logs:
-        if log["name"] == "epoch" or True:  # TODO: Remove after fix
+    for log in logs[:-1]:
+        if log["name"] == "epoch" or not only_epoch:
             if stop is not None and stop <= log["num"]:
                 break
             for dataset_id, dataset in enumerate(("train", "test")):
@@ -53,9 +53,10 @@ def extract_mesures(logs, stop=None):
 
 
 if __name__ == '__main__':
-    logfile_path = "output/train.log"
+    #logfile_path = "output/train.log"
+    logfile_path = "output/train_resnet.log"
     logs = read_logs(logfile_path)
-    mesures = extract_mesures(logs, 19)
+    mesures = extract_mesures(logs)
 
     plt.plot(mesures["train_cross ent"], label="train")
     plt.plot(mesures["test_cross ent"], label="test")

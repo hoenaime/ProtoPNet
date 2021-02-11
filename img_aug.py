@@ -25,12 +25,12 @@ for i in range(len(folders)):
         print("Déjà augmenté: " + tfd)
         continue
     # rotation
-    p = Augmentor.Pipeline(source_directory=fd, output_directory=tfd)
+    """p = Augmentor.Pipeline(source_directory=fd, output_directory=tfd)
     p.rotate(probability=1, max_left_rotation=15, max_right_rotation=15)
     p.flip_left_right(probability=0.5)
     for i in range(10):
         p.process()
-    del p
+    del p"""
     # skew
     p = Augmentor.Pipeline(source_directory=fd, output_directory=tfd)
     p.skew(probability=1, magnitude=0.2)  # max 45 degrees
