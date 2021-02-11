@@ -15,8 +15,8 @@ dataset_cropped_path = 'datasets/MIT/Images'
 if __name__ == '__main__':
     dataset_cropped_path = Path(dataset_cropped_path)
     dataset_path = Path(dataset_path)
-    train_folder = Path('datasets/MIT/train_cropped')
-    test_folder = Path('datasets/MIT/test_cropped')
+    train_folder = Path('datasets/MIT/train')
+    test_folder = Path('datasets/MIT/test')
     for is_training_img, filename in ((True, 'TrainImages.txt'), (False, 'TestImages.txt')):
         with open(dataset_path/filename) as img_file:
             for img_line in tqdm(img_file):

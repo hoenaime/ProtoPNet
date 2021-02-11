@@ -1,16 +1,16 @@
-base_architecture = 'resnet34'  # 'vgg19'
+base_architecture = 'vgg19'  # 'resnet34'
 img_size = 224
-prototype_shape = (2000, 256, 1, 1)  # (2000, 128, 1, 1)
-num_classes = 200
+prototype_shape = (2000, 128, 1, 1)  # (2000, 256, 1, 1)
+num_classes = 67
 prototype_activation_function = 'log'
 add_on_layers_type = 'regular'
 
-experiment_run = '004'
+experiment_run = '005'
 
-data_path = './datasets/cub200_cropped/'
-train_dir = data_path + 'train_cropped_augmented/'
-test_dir = data_path + 'test_cropped/'
-train_push_dir = data_path + 'train_cropped/'
+data_path = './datasets/MIT/'  # './datasets/cub200_cropped/'
+train_dir = data_path + 'train'  # 'train_cropped_augmented/'
+test_dir = data_path + 'test'  # 'test_cropped/'
+train_push_dir = data_path + 'train'  # 'train_cropped/'
 train_batch_size = 80
 test_batch_size = 100
 train_push_batch_size = 75
