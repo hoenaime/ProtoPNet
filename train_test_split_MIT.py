@@ -29,7 +29,6 @@ if __name__ == '__main__':
                     output_location = test_folder / img_location
                 output_location.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy(img_path.as_posix().strip(), output_location.as_posix().strip())
-                break
     labels = []
     for folder in (train_folder, test_folder):
         (dirpath, dirnames, filenames) = next(os.walk(folder))
