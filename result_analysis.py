@@ -54,9 +54,10 @@ def extract_mesures(logs, stop=None, only_epoch=False):
 
 if __name__ == '__main__':
     #logfile_path = "output/train.log"
-    logfile_path = "output/train_resnet.log"
+    #logfile_path = "output/train_resnet.log"
+    logfile_path = "output/mit_train.log"
     logs = read_logs(logfile_path)
-    mesures = extract_mesures(logs)
+    mesures = extract_mesures(logs, 30)
 
     plt.plot(mesures["train_cross ent"], label="train")
     plt.plot(mesures["test_cross ent"], label="test")
